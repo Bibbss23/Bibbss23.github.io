@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style1.css">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 100%;
+            height: 100%;
+            margin-top: 150px;
+            /* background-color: aqua; */
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            padding: 30px 30px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .motorcyles{
+            width: 300px;
+            height: 48%;
+            background-color: lightgray;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+            transition: 0.3s;
+            border-radius: 5px;
+            margin: 10px;
+            
+        }
+
+        img{
+            border-radius: 5px 5px 5px 5px;
+            margin: 10px 0px;
+        }
+        .text{
+            background-color: #10A19D;
+            border-radius: 5px 5px 5px 5px;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            margin: 10px;
+        }
+        .text a{
+            text-decoration: none;
+            color: #fff;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .popup{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s;
+        }
+        .popupContent{
+            width: 50%;
+            height: auto;
+            background-color: lightgrey;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            /* biar ada di tengah */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.25);
+            opacity: 0;
+            transition: all .5s .1s;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .popupImage{
+            display: flex;
+            width: 100%;
+            height: 400px;
+            margin-top: -10px;
+        }
+        .popupImage img{
+            display: block;
+            width: 100%;
+        }
+        .popupHeader{
+            color: #555;
+            margin: 10px 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .popupHeader h1{
+            font-size: 30px;
+        }
+        .popupHeader h3{
+            font-size: 18px;
+        }
+        .popupDeskripsi{
+            color: #555;
+            margin: 10px 20px;
+        }
+        .button{
+            margin: 10px 20px;
+            background-color: #10A19D;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 5px 5px 5px 5px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .button a{
+            text-decoration: none;
+            color: #000;
+        }
+        /* popup1 */
+        #popup1:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup1:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup2 */
+        #popup2:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup2:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup3 */
+        #popup3:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup3:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup4 */
+        #popup4:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup4:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup5 */
+        #popup5:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup5:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup6 */
+        #popup6:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup6:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup7 */
+        #popup7:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup7:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        /* popup8 */
+        #popup8:target {
+            opacity: 1;
+            visibility: visible;
+        }
+        #popup8:target .popupContent{
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popupClose:link, .popupClose:visited{
+            position: absolute;
+            top: 12px;
+            padding-left: 10px;
+            text-decoration: none;
+            color: #000;
+            font-size: 30px;
+            display: inline-block;
+            line-height: 1;
+            transition: all .3s;
+        }
+        .popupClose:hover, .popupClose:active{
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="background"></div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Bikes.html">Bikes</a></li>
+                <li class="active"><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="logo">
+            <img src="assets/logo.png" alt="">
+        </div>
+        <div class="content">
+                <div class="motorcyles"> 
+                    <center>
+                        <img src="assets/motor1.jpg" style="width:90%; height: 160px;">
+                        <h3>Honda CB150R</h3>
+                        <div class="text"><p><a href="#popup1">Lihat Detail</a></p></div>
+                    </center>
+                </div>
+                <div class="motorcyles"> 
+                    <center>
+                        <img src="assets/motor2.jpg" style="width:90%; height: 160px;">
+                        <h3>Honda CRF 150</h3>
+                        <div class="text">
+                            <p><a href="#popup2">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles">
+                    <center>
+                        <img src="assets/motor3.jpg" style="width:90%; height: 160px;">
+                        <h3>Honda CBR 1000 RR</h3>
+                        <div class="text">
+                            <p><a href="#popup3">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles">
+                    <center>
+                        <img src="assets/motor4.jpg" style="width:90%; height: 160px;">
+                        <h3>Honda CRF 250 Rally</h3>
+                        <div class="text">
+                            <p><a href="#popup4">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles"> 
+                    <center>
+                        <img src="assets/motor5.jpg" style="width:90%; height: 160px;">
+                        <h3>Yamaha Tmax DX</h3>
+                        <div class="text">
+                            <p><a href="#popup5">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles">
+                    <center>
+                        <img src="assets/motor6.jpg" style="width:90%; height: 160px;">
+                        <h3>Yamaha Vixion R</h3>
+                        <div class="text">
+                            <p><a href="#popup6">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles">
+                    <center>
+                        <img src="assets/motor7.jpg" style="width:90%; height: 160px;">
+                        <h3>Yamaha Byson</h3>
+                        <div class="text">
+                            <p><a href="#popup7">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <div class="motorcyles">
+                    <center>
+                        <img src="assets/motor8.jpg" style="width:90%; height: 160px;">
+                        <h3>Yamaha R1M</h3>
+                        <div class="text">
+                            <p><a href="#popup8">Lihat Detail</a></p>
+                        </div>
+                    </center>
+                </div>
+                <!-- bagian popup -->
+            <div class="popup" id="popup1">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor1.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor CB150R</h2>
+                        <h3>Harga Mulai Rp. 30.299.000</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                        Tipe Mesin : 4 Langkah, DHOC-4Kantup || <br>
+                        Tipe Kopling : Multiple Wet Clutch||
+                        Volume Langkah : 149.16cc || <br>
+                        Daya Maksimum : 12,4KW(16.9PS)//9000||
+                        Torsi Maksimum : 13,8Nm(1,41Kgf.m)//7000 ||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- pop2 -->
+            <div class="popup" id="popup2">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor2.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor CRF 150</h2>
+                        <h3>Harga Mulai Rp. 36.480.000</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                            Tipe Mesin : 4 Langkah, Satu Silinder || <br>
+                            Tipe Kopling : Manual, Multiplate wet||
+                            Volume Langkah : 149.15cc || <br>
+                            Daya Maksimum : 9,51 KW(12,91 PS)/8.000 Rpm||
+                            Torsi Maksimum : 12,43 Nm(1,27 Kgf.m)/6.500 Rpm ||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- pop3 -->
+            <div class="popup" id="popup3">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor3.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor Honda CBR 1000 RR</h2>
+                        <h3>Harga Mulai Rp. 1,08 Milyar</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                            Tipe Mesin : 4-Cylinder, 4-Stroke, 16-Valve, Liquid-Cooled DOHC Engine || <br>
+                            Tipe Kopling : Wet, Multi-Plate||
+                            Volume Langkah : 999.9 c || <br>
+                            Diameter x Langkah: 81 mm x 48.5 mm||
+                            Torsi Maksimum : 113 Nm 12500 rpm ||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- popup4 -->
+            <div class="popup" id="popup4">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor4.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor CRF 250 Rally</h2>
+                        <h3>Harga Mulai Rp. 92.333.000</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                            Tipe Mesin : 4-Stroke DOHC 4-valve Single Cylinder || <br>
+                            Tipe Kopling : Wet, Multi-Plate Wet Clutch||
+                            Volume Langkah : 249.6 cc || <br>
+                            Daya Maksimum : 18,9 kw / 8.500 rpm||
+                            Torsi Maksimum : 23,1 Nm / 6.500 rpm ||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- popup5 -->
+            <div class="popup" id="popup5">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor5.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor Tmax DX</h2>
+                        <h3>Harga Mulai Rp. 319 Juta</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                           Yamaha TMAX DX tersedia dalam pilihan mesin Petrol di Indonesia Scooter baru dari Yamaha hadir dalam 2 varian. Bicara soal spesifikasi mesin Yamaha TMAX DX, ini ditenagai dua pilihan mesin Petrol berkapasitas 530 cc. TMAX DX tersedia dengan transmisi CVT tergantung variannya. TMAX DX adalah Scooter 2 seater dengan panjang 2200 mm, lebar 765 mm, wheelbase 1575 mm. serta ground clearance 125 mm.
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- popup6 -->
+            <div class="popup" id="popup6">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor6.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor Vixion R</h2>
+                        <h3>Harga Mulai Rp. 32.455.000</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                            Tipe Mesin : Liqued cooled 4-stroke, Sohc, 4 valve, VVA || <br>
+                            Tipe Kopling : Wet, Multi-Plate Wet Clutch ; Assist & Slipper Clutch||
+                            Volume Langkah : 155,1cc || <br>
+                            Daya Maksimum : 14.2Kw//10000Rpm||
+                            Torsi Maksimum : 14,7Nm//8500Rpm||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- popup7 -->
+            <div class="popup" id="popup7">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor7.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor Yamaha Byson</h2>
+                        <h3>Harga Mulai Rp. 21.500.000</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor :
+                            Tipe Mesin : 4 Langkah, 2 valve sohc, Berpedingin udara|| <br>
+                            Tipe Kopling : basah, kopling manual, multiplate||
+                            Volume Langkah : 153cc || <br>
+                            Daya Maksimum : 10,1Kw//7500Rpm||
+                            Torsi Maksimum : 13,6Nm//6000Rpm||
+                        </p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- popup8 -->
+            <div class="popup" id="popup8">
+                <div class="popupContent">
+                    <div class="popupImage">
+                        <img src="assets/motor8.jpg" alt="">
+                        <a href="#" class="popupClose">&times;</a>
+                    </div>
+                    <div class="popupHeader">
+                        <h2>Motor R1M</h2>
+                        <h3>Harga Mulai Rp. 812 Juta</h3>
+                    </div>
+                    <div class="popupDeskripsi">
+                        <p>Spesfikasi motor : 
+                        P x L x T  (2,055 mm x 690 mm x 1,165 mm) ||
+                        Tinggi Jok (855 mm) ||<br>
+                        Jarak Sumbu Roda (1,405 mm) ||
+                        Ground Clearance (130 mm) ||
+                        Bobot Motor (201 Kg)</p>
+                    </div>
+                    <div class="button">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

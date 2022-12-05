@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container" >
+        <div id="background"></div>
+        <div id="navbar">
+            <ul>
+                <li ><a href="index.html">Home</a></li>
+                <li class="active"><a href="Bikes.html">Bikes</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="logo">
+            <img src="./assets/logo.png" alt="">
+        </div>
+        <div id="sideImage">
+            <img src="assets/bike.png" alt="">
+        </div>
+        <div id="content" style="padding-top: 70px; padding-left: 140px;">
+            <h2>CBR1000RR-R SP</h2><br>
+            <h3>SPECIFICATION DETAIL</h3>
+            <p>Engine Type &nbsp;|&nbsp;Liquid Cooled 4-stroke 16-valve DOHC Inline-4 <br>
+                Engine Displacement &nbsp; | &nbsp; 999.9 <br>
+                Bore X Stroke &nbsp;| &nbsp; 81 x 48,5 <br>
+                Wheelbase | 1.460mm <br>
+                Frame Type &nbsp; | &nbsp;  Aluminium Composite Twin Spar<br>
+                Transmission &nbsp; | &nbsp; Manual, 6-speed with Quick Shifter <br>
+                Gear Shift Pattern  &nbsp; | &nbsp; 1 - N - 2 - 3 - 4 - 5 - 6<br>
+
+            </p>
+           
+        </div>
+        
+        <div id="socialIcons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div id="line"></div>
+        <div id="paginationBtns">
+            <div id="rightPagination" class="pagination">
+                <i class="fas fa-angle-right"></i>
+            </div>
+            <div id="leftPagination" class="pagination">
+                <i class="fas fa-angle-left"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        let orangebtn = document.getElementById("orange");
+        let bluebtn = document.getElementById("blue");
+        let redbtn = document.getElementById("red");
+        let sideImage = document.getElementById("sideImage");
+
+        orangebtn.onclick = function(){
+        sideImage.style.background = "url(./assets/bike.png)"    
+        }
+        bluebtn.onclick = function(){
+        sideImage.style.background = "url(./assets/bike2.jpg)"    
+        }
+        redbtn.onclick = function(){
+        sideImage.style.background = "url(./assets/bike3.jpg)"    
+        }
+
+        </script>
+</body>
+</html>
